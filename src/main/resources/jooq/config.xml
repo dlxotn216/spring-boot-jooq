@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<configuration>
+    <!-- JDBC connection parameters -->
+    <jdbc>
+        <driver>org.h2.Driver</driver>
+        <url>jdbc:h2:tcp://localhost:9090/~/test</url>
+        <user>sa</user>
+        <password></password>
+    </jdbc>
+
+    <!-- Generator parameters -->
+    <generator>
+        <name>org.jooq.codegen.JavaGenerator</name>
+<!--        <strategy>-->
+<!--            <name>org.jooq.codegen.example.JPrefixGeneratorStrategy</name>-->
+<!--        </strategy>-->
+        <database>
+            <name>org.jooq.meta.h2.H2Database</name>
+            <includes>HOM_USER</includes>
+            <excludes></excludes>
+            <!-- In case your database supports catalogs, e.g. SQL Server:
+            <inputCatalog>public</inputCatalog>
+              -->
+<!--            <includeExcludeColumns>true</includeExcludeColumns> 컬럼 생성 안됨 -->
+            <inputSchema>PUBLIC</inputSchema>
+        </database>
+        <target>
+            <packageName>me.taesu.springjooq</packageName>
+            <directory>target/generated-sources/jooq</directory>
+        </target>
+        <generate>
+            <indexes>true</indexes>
+            <relations>true</relations>
+            <javaTimeTypes>true</javaTimeTypes>
+            <fluentSetters>true</fluentSetters>
+            <!--<deprecated>true</deprecated>-->
+            <!--<instanceFields>true</instanceFields>-->
+            <!--<generatedAnnotation>true</generatedAnnotation>-->
+            <!--<records>true</records>-->
+<!--            <pojos>true</pojos>-->
+            <!--<immutablePojos>false</immutablePojos>-->
+            <!--<interfaces>false</interfaces>-->
+            <!--<daos>true</daos>-->
+            <!--<jpaAnnotations>true</jpaAnnotations>-->
+            <!--<validationAnnotations>false</validationAnnotations>-->
+            <!--<globalObjectReferences>true</globalObjectReferences>-->
+            <!--<fluentSetters>true</fluentSetters>-->
+        </generate>
+    </generator>
+    <onError>LOG</onError>
+</configuration>
